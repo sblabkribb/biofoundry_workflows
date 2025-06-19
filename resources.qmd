@@ -1,0 +1,30 @@
+---
+title: "Resources"
+subtitle: "Additional documentation and references"
+---
+
+## Publications
+
+- [Biofoundry Workflow Abstraction Hierarchy Manuscript](resources/Biofoundry_workflow_Abstraction_hierarchy_manuscript_v250605.pdf)
+- [Supplementary Materials](resources/Biofoundry_workflow_Abstraction_hierarchy_suppl_v250605.pdf)
+
+## Documentation
+
+### File Structure
+- `workflows/` - Contains workflow definitions and descriptions
+- `unit-operations/` - Contains unit operation specifications
+- `resources/` - Additional documentation and reference materials
+
+### Version Information
+- Current workflow version: 0.3
+- Current unit operations version: 0.3 (hardware), 0.2 (software)
+- Last updated: 2025-04-07
+
+## Contact
+
+For questions or contributions, please contact:
+- Haseong Kim (haseong@kribb.re.kr)
+
+## License
+
+This documentation is available under [appropriate license]. 

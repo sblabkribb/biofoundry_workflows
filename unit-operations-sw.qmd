@@ -1,0 +1,30 @@
+---
+title: "Software Unit Operations"  
+subtitle: "Software-based unit operations for biofoundry automation"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(DT)
+```
+
+{{< include unit-operations/unitoperations_sw_en.md >}}
+
+## Software Categories
+
+```{r sw-categories, echo=FALSE}
+# Create software category summary
+sw_categories <- data.frame(
+  Category = c("Design Tools", "Sequence Analysis", "Data Processing", "AI/ML", "Workflow Management"),
+  Count = c(8, 10, 6, 8, 3),
+  Examples = c(
+    "DNA design, protein structure prediction",
+    "Assembly, alignment, variant calling",
+    "Quality control, preprocessing",
+    "Deep learning, model training",
+    "Plate mapping, computation"
+  )
+)
+
+kable(sw_categories, caption = "Software Unit Operation Categories")
+``` 

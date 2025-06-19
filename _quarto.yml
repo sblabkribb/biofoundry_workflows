@@ -1,0 +1,45 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Biofoundry Workflows"
+  description: "Standardized workflows and unit operations for biofoundry automation"
+  
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Workflows"
+        file: workflows.qmd
+      - text: "Unit Operations"
+        menu:
+          - text: "Hardware"
+            file: unit-operations-hw.qmd
+          - text: "Software"
+            file: unit-operations-sw.qmd
+      - text: "Resources"
+        file: resources.qmd
+    right:
+      - icon: github
+        href: https://github.com/your-username/biofoundry_workflows
+        aria-label: GitHub
+
+  sidebar:
+    style: "docked"
+    search: true
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    code-summary: "Show code"
+
+execute:
+  freeze: auto 

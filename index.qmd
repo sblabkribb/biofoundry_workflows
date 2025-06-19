@@ -1,0 +1,51 @@
+---
+title: "Biofoundry Workflows"
+subtitle: "Standardized workflows and unit operations for biofoundry automation"
+---
+
+## Overview
+
+- Due to differences in terminology, concepts, and scope among biofoundry researchers, there are limitations in utilizing physically/logically standardized automated equipment and software 
+- Conceptually subdividing and structuring the processes required in biofoundries enables standardized execution and management of processes, thereby improving biofoundry performance
+
+## Workflow Concepts
+
+- **Workflow**: Defined as a logical, sequential flow of unit processes that can include part or all of the DBTL (Design-Build-Test-Learn) stages of experiments. Can be utilized as a basic unit for measuring biofoundry performance and developing automation levels.
+- **Unit Operation**: The minimum unit process of experiments, where one unit operation is defined to correspond to one piece of equipment (UO) or one software (US)
+
+![Biofoundry Workflow Framework](figure1.jpg)
+
+## Purpose of This Repository
+
+- Definition and management of workflow and unit operation concepts
+- Concept updates through opinion exchange
+
+## Quick Navigation
+
+::: {.grid}
+
+::: {.g-col-6}
+### [Workflows](workflows.qmd)
+Browse the complete collection of standardized workflows organized by DBTL phases:
+- Design workflows
+- Build workflows  
+- Test workflows
+- Learn workflows
+:::
+
+::: {.g-col-6}
+### [Unit Operations](unit-operations-hw.qmd)
+Explore unit operations categorized by type:
+- [Hardware operations](unit-operations-hw.qmd)
+- [Software operations](unit-operations-sw.qmd)
+:::
+
+:::
+
+## Abstract
+
+Lack of standardization in biofoundries limits the scalability and efficiency of synthetic biology research. Here, we propose an abstraction hierarchy that organizes biofoundry activities into four interoperable levels: Project, Service/Capability, Workflow, and Unit Operation, effectively streamlining the Design‑Build‑Test‑Learn (DBTL) cycle. This framework enables more modular, flexible, and automated experimental workflows. It improves communication between researchers and systems, supports reproducibility, and facilitates better integration of software tools and artificial intelligence. Our approach lays the foundation for a globally interoperable biofoundry network, advancing collaborative synthetic biology and accelerating innovation in response to scientific and societal challenges.
+
+## Contributing
+
+We welcome contributions and feedback! Please use the [issue board](https://github.com/your-username/biofoundry_workflows/issues) for suggestions and discussions about workflow and unit operation definitions. 

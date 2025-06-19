@@ -1,0 +1,33 @@
+---
+title: "Workflows"
+subtitle: "Standardized workflows for biofoundry operations"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(DT)
+```
+
+{{< include workflows/workflows_en.md >}}
+
+## Summary Statistics
+
+```{r workflow-stats, echo=FALSE}
+# Create a summary table of workflows by category
+workflow_categories <- data.frame(
+  Category = c("Design", "Build", "Test", "Learn"),
+  Count = c(13, 15, 17, 10),
+  Description = c(
+    "Experimental design and planning workflows",
+    "DNA assembly and cell preparation workflows", 
+    "Measurement and analysis workflows",
+    "Data analysis and modeling workflows"
+  )
+)
+
+kable(workflow_categories, caption = "Workflow Categories Overview")
+```
+
+## Search Workflows
+
+Use the search function in the navigation bar to quickly find specific workflows by ID or description. 

@@ -1,0 +1,30 @@
+---
+title: "Hardware Unit Operations"
+subtitle: "Equipment-based unit operations for biofoundry automation"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(DT)
+```
+
+{{< include unit-operations/unitoperations_hw_en.md >}}
+
+## Equipment Categories
+
+```{r hw-categories, echo=FALSE}
+# Create equipment category summary
+hw_categories <- data.frame(
+  Category = c("Liquid Handling", "Cell Processing", "Analysis", "Chromatography", "Synthesis"),
+  Count = c(8, 12, 8, 10, 2),
+  Examples = c(
+    "Liquid dispensers, pipetting systems",
+    "Cell sorting, lysis, fermentation",
+    "Sequencing, microscopy, fragment analysis", 
+    "LC-MS, GC-MS, HPLC systems",
+    "Oligomer synthesis, manual operations"
+  )
+)
+
+kable(hw_categories, caption = "Hardware Unit Operation Categories")
+``` 

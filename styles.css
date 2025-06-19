@@ -1,0 +1,44 @@
+/* Custom styles for biofoundry workflows website */
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.g-col-6 {
+  grid-column: span 6;
+}
+
+/* Workflow and unit operation cards */
+.workflow-card, .unit-op-card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+}
+
+.workflow-card h3, .unit-op-card h3 {
+  color: #0d6efd;
+  margin-top: 0;
+}
+
+/* Navigation enhancements */
+.navbar-brand {
+  font-weight: bold;
+}
+
+/* Table styling */
+.table {
+  font-size: 0.9rem;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  border-top: none;
+}
+
+/* Code styling */
+.code-summary {
+  font-size: 0.875rem;
+} 
