@@ -48,4 +48,4 @@ Lack of standardization in biofoundries limits the scalability and efficiency of
 
 ## Contributing
 
-We welcome contributions and feedback! Please use the [issue board](https://github.com/your-username/biofoundry_workflows/issues) for suggestions and discussions about workflow and unit operation definitions. 
+We welcome contributions and feedback! Please use the [issue board](https://github.com/sblabkribb/biofoundry_workflows/issues) for suggestions and discussions about workflow and unit operation definitions. 

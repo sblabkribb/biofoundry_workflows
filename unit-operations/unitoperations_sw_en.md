@@ -3,9 +3,8 @@ title: Biofoundry Unit-operations
 description: Collection of standardized Unit-operations
 version: 0.2
 language: English
-author: 
-  - Haseong Kim (haseong@kribb.re.kr)
-  - 123 (123@123.com)
+suggestions:
+  - [github issue](https://github.com/sblabkribb/biofoundry_workflows/issues)
 date: 2025-02-22
 categories:
   - unit-operations
