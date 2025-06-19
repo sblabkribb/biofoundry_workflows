@@ -4,7 +4,7 @@ description: Collection of standardized Unit-operations
 version: 0.2
 language: English
 suggestions:
-  - [github issue](https://github.com/sblabkribb/biofoundry_workflows/issues)
+  - https://github.com/sblabkribb/biofoundry_workflows/issues
 date: 2025-02-22
 categories:
   - unit-operations

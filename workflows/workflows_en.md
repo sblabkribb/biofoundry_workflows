@@ -4,7 +4,7 @@ description: Collection of standardized workflows for biofoundry operations
 version: 0.3
 language: English
 suggestions:
-  - [github issue](https://github.com/sblabkribb/biofoundry_workflows/issues)
+  - https://github.com/sblabkribb/biofoundry_workflows/issues
 date: 2025-04-07
 categories:
   - workflows
