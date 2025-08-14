@@ -108,8 +108,7 @@ status: draft
 
 ## Test
 
-- **WT010**: Nucleotide Sequencing
-  - This workflow involves preparing samples through native barcode multiplexing and library preparation, using next-generation sequencing (NGS) equipment to sequence the target DNA and produce fastq files. It includes transcriptomics analysis, such as RNA sequencing, to provide comprehensive insights into genetic material.
+- **WT010**: Nucleotide Sequencing - This workflow includes preparing samples according to the sequencing method. For next-generation sequencing (NGS), this includes preparing DNA templates, barcode multiplexing and library preparation, followed by sequencing and basecalling on NGS equipment to generate fastq files. For Sanger sequencing, this involves preparing DNA templates and primers, performing cycle sequencing reactions, and basecalling on capillary electrophoresis equipment to generate ab1 files. Applications include RNA sequencing and targeted gene sequencing to provide comprehensive insights into genetic material.
 
 - **WT015**: Nucleic Acid Size Verification
   - This workflow verifies the size and assesses the integrity of nucleic acid fragments (DNA or RNA) using electrophoretic separation techniques. Methods such as traditional agarose gel electrophoresis or capillary electrophoresis are employed to separate fragments based on size. Common applications include verifying PCR product sizes, confirming plasmid construction/linearization, checking restriction digest completeness, and assessing RNA quality. 
