@@ -41,12 +41,17 @@ counts <- data.frame(
   stringsAsFactors = FALSE
 )
 
+design_count <- count_items(section_indices("Design"), "WD")
+build_count <- count_items(section_indices("Build"), "WB")
+test_count <- count_items(section_indices("Test"), "WT")
+learn_count <- count_items(section_indices("Learn"), "WL")
+
 counts$Count <- c(
-  count_items(section_indices("Design"), "WD"),
-  count_items(section_indices("Build"), "WB"),
-  count_items(section_indices("Test"), "WT"),
-  count_items(section_indices("Learn"), "WL"),
-  sum(counts$Count[1:4])
+  design_count,
+  build_count,
+  test_count,
+  learn_count,
+  sum(c(design_count, build_count, test_count, learn_count))
 )
 
 kable(counts[, c("Category", "Count", "Description")], caption = "Workflow Categories Overview")
