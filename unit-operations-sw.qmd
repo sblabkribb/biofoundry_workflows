@@ -8,7 +8,7 @@ library(knitr)
 library(DT)
 ```
 
-## Statistics
+# Statistics
 
 ```{r sw-categories, echo=FALSE}
 # Derive counts dynamically from included markdown (USxxx entries)
@@ -25,9 +25,10 @@ sw_categories <- data.frame(
 kable(sw_categories, caption = "Software Unit Operation Overview")
 ```
 
-## Search Unit Operations
+# Search Unit Operations
 
 Use the search function in the navigation bar to quickly find specific unit operations by ID or description. 
+
 
 
 {{< include unit-operations/unitoperations_sw_en.md >}}

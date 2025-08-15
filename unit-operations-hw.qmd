@@ -9,7 +9,7 @@ library(DT)
 ```
 
 
-## Statistics
+# Statistics
 
 ```{r hw-categories, echo=FALSE}
 # Derive counts dynamically from included markdown (UHxxx entries)
@@ -26,8 +26,9 @@ hw_categories <- data.frame(
 kable(hw_categories, caption = "Hardware Unit Operation Statistics")
 ```
 
-## Search Unit Operations
+# Search Unit Operations
 
 Use the search function in the navigation bar to quickly find specific unit operations by ID or description. 
+
 
 {{< include unit-operations/unitoperations_hw_en.md >}}
