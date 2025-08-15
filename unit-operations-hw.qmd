@@ -8,22 +8,26 @@ library(knitr)
 library(DT)
 ```
 
-{{< include unit-operations/unitoperations_hw_en.md >}}
 
-## Equipment Categories
+## Statistics
 
 ```{r hw-categories, echo=FALSE}
 # Derive counts dynamically from included markdown (UHxxx entries)
 hw_path <- "unit-operations/unitoperations_hw_en.md"
 hw_lines <- readLines(hw_path, warn = FALSE, encoding = "UTF-8")
-uh_count <- sum(grepl("^- \\*\\*UH[0-9]{3}\\*\\*: ", hw_lines))
+uh_count <- sum(grepl("^- \\*\\*UHW[0-9]{3}\\*\\*: ", hw_lines))
 
 hw_categories <- data.frame(
   Category = c("Total Hardware Unit-operations"),
   Count = c(uh_count),
-  Examples = c("Liquid handling, cell processing, analysis, chromatography, etc."),
   stringsAsFactors = FALSE
 )
 
-kable(hw_categories, caption = "Hardware Unit Operation Overview")
+kable(hw_categories, caption = "Hardware Unit Operation Statistics")
 ```
+
+## Search Unit Operations
+
+Use the search function in the navigation bar to quickly find specific unit operations by ID or description. 
+
+{{< include unit-operations/unitoperations_hw_en.md >}}

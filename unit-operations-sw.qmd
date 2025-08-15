@@ -8,22 +8,26 @@ library(knitr)
 library(DT)
 ```
 
-{{< include unit-operations/unitoperations_sw_en.md >}}
-
-## Software Categories
+## Statistics
 
 ```{r sw-categories, echo=FALSE}
 # Derive counts dynamically from included markdown (USxxx entries)
 sw_path <- "unit-operations/unitoperations_sw_en.md"
 sw_lines <- readLines(sw_path, warn = FALSE, encoding = "UTF-8")
-us_count <- sum(grepl("^- \\*\\*US[0-9]{3}\\*\\*: ", sw_lines))
+us_count <- sum(grepl("^- \\*\\*USW[0-9]{3}\\*\\*: ", sw_lines))
 
 sw_categories <- data.frame(
   Category = c("Total Software Unit-operations"),
   Count = c(us_count),
-  Examples = c("Design, alignment, QC, AI/ML, deployment, etc."),
   stringsAsFactors = FALSE
 )
 
 kable(sw_categories, caption = "Software Unit Operation Overview")
 ```
+
+## Search Unit Operations
+
+Use the search function in the navigation bar to quickly find specific unit operations by ID or description. 
+
+
+{{< include unit-operations/unitoperations_sw_en.md >}}

@@ -8,8 +8,6 @@ library(knitr)
 library(DT)
 ```
 
-{{< include workflows/workflows_en.md >}}
-
 ## Summary Statistics
 
 ```{r workflow-stats, echo=FALSE}
@@ -33,12 +31,13 @@ count_items <- function(idx, prefix) {
 }
 
 counts <- data.frame(
-  Category = c("Design", "Build", "Test", "Learn"),
+  Category = c("Design", "Build", "Test", "Learn", "Total"),
   Description = c(
     "Experimental design and planning workflows",
     "DNA assembly and cell preparation workflows",
     "Measurement and analysis workflows",
-    "Data analysis and modeling workflows"
+    "Data analysis and modeling workflows",
+    ""
   ),
   stringsAsFactors = FALSE
 )
@@ -47,7 +46,8 @@ counts$Count <- c(
   count_items(section_indices("Design"), "WD"),
   count_items(section_indices("Build"), "WB"),
   count_items(section_indices("Test"), "WT"),
-  count_items(section_indices("Learn"), "WL")
+  count_items(section_indices("Learn"), "WL"),
+  sum(counts$Count[1:4])
 )
 
 kable(counts[, c("Category", "Count", "Description")], caption = "Workflow Categories Overview")
@@ -56,3 +56,5 @@ kable(counts[, c("Category", "Count", "Description")], caption = "Workflow Categ
 ## Search Workflows
 
 Use the search function in the navigation bar to quickly find specific workflows by ID or description. 
+
+{{< include workflows/workflows_en.md >}}
