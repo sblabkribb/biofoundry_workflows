@@ -1,17 +1,16 @@
 ```
-title: Biofoundry Unit-operations
-description: Collection of standardized Unit-operations
-version: 0.3
-language: English
-suggestions:
+Title: Biofoundry Unit-operations for hardware:
+Description: Collection of standardized Unit-operations
+Version: 0.4
+Language: English
+Suggestions:
   - https://github.com/sblabkribb/biofoundry_workflows/issues
-date: 2025-04-07
-categories:
+Last updated: 2025-08-15
+Categories:
   - unit-operations
   - biofoundry
   - lab automation
   - hardware
-status: draft
 ```
 
 # Unit-operations
@@ -129,6 +128,10 @@ status: draft
 - **UHW260**: Short-read Sequence Analysis
   - **Equipment**: Short read sequence analyzer
   - **Description**: Short-read-based sequencing using NGS technologies. It is essential for high-throughput genomic studies and variant detection.
+
+- **UHW265**: Sanger Sequencing
+  - **Equipment**: Capillary electrophoresis DNA sequencer
+  - **Description**: Classical chain-termination sequencing for targeted amplicons and plasmids. Used for sequence verification and small-scale sequencing, producing chromatograms (ABI) and base calls. Supports 96-well plate automation for moderate throughput.
 
 - **UHW270**: Long-read Sequence Analysis
   - **Equipment**: Long read sequence analyzer

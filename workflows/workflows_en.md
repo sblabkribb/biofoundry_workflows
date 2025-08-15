@@ -1,16 +1,15 @@
 ```
-title: Biofoundry Workflows
-description: Collection of standardized workflows for biofoundry operations
-version: 0.4
-language: English
-suggestions:
+Title: Biofoundry Workflows
+Description: Collection of standardized workflows for biofoundry operations
+Version: 0.4.1
+Language: English
+Suggestions:
   - https://github.com/sblabkribb/biofoundry_workflows/issues
-date: 2025-04-07
-categories:
+Last updated: 2025-08-15
+Categories:
   - workflows
   - biofoundry
   - lab automation
-status: draft
 ```
 
 # Workflows
@@ -118,7 +117,7 @@ status: draft
 ## Test
 
 - **WT010**: Nucleotide Sequencing
-  - This workflow runs next-generation sequencing (NGS) instruments to generate raw data (e.g., fastq files) from sequencing-ready libraries. It covers flow cell/chip loading, run setup, on-instrument QC/monitoring, and data offloading/demultiplexing. Transcriptome-scale assays (e.g., RNA-seq) are executed here once libraries have been prepared in the dedicated library preparation workflow.
+  - This workflow runs next-generation sequencing (NGS) instruments to generate raw data (e.g., fastq files) from sequencing-ready libraries. It covers flow cell/chip loading, run setup, on-instrument QC/monitoring, and data offloading/demultiplexing. Transcriptome-scale assays (e.g., RNA-seq) are executed here once libraries have been prepared in the dedicated library preparation workflow. For Sanger sequencing, this involves preparing DNA templates and primers, performing cycle sequencing reactions, and basecalling on capillary electrophoresis equipment to generate .ab1 chromatogram files. Typical applications include targeted gene/plasmid verification and small-scale sequencing; transcriptome-scale RNA sequencing is performed via NGS workflows (e.g., RNA-seq).
 
 - **WT012**: Targeted mRNA Expression Measurement
   - This workflow measures specific transcript levels from RNA samples using targeted assays such as RT-qPCR, qPCR, and digital PCR (ddPCR). It supports absolute (standard curve/copy number) and relative (ΔΔCt) quantification with appropriate reference genes, and enables high-throughput measurements in 96/384-well plates with automated liquid handling. Outputs include per-gene expression levels, fold-changes across conditions, and QC metrics such as amplification efficiency and melt-curve specificity, complementing NGS-based transcriptome profiling.
