@@ -13,18 +13,17 @@ library(DT)
 ## Software Categories
 
 ```{r sw-categories, echo=FALSE}
-# Create software category summary
+# Derive counts dynamically from included markdown (USxxx entries)
+sw_path <- "unit-operations/unitoperations_sw_en.md"
+sw_lines <- readLines(sw_path, warn = FALSE, encoding = "UTF-8")
+us_count <- sum(grepl("^- \\*\\*US[0-9]{3}\\*\\*: ", sw_lines))
+
 sw_categories <- data.frame(
-  Category = c("Design Tools", "Sequence Analysis", "Data Processing", "AI/ML", "Workflow Management"),
-  Count = c(8, 10, 6, 8, 3),
-  Examples = c(
-    "DNA design, protein structure prediction",
-    "Assembly, alignment, variant calling",
-    "Quality control, preprocessing",
-    "Deep learning, model training",
-    "Plate mapping, computation"
-  )
+  Category = c("Total Software Unit-operations"),
+  Count = c(us_count),
+  Examples = c("Design, alignment, QC, AI/ML, deployment, etc."),
+  stringsAsFactors = FALSE
 )
 
-kable(sw_categories, caption = "Software Unit Operation Categories")
-``` 
+kable(sw_categories, caption = "Software Unit Operation Overview")
+```

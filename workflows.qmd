@@ -13,19 +13,44 @@ library(DT)
 ## Summary Statistics
 
 ```{r workflow-stats, echo=FALSE}
-# Create a summary table of workflows by category
-workflow_categories <- data.frame(
+# Compute workflow counts dynamically from included markdown
+wf_path <- "workflows/workflows_en.md"
+wf_lines <- readLines(wf_path, warn = FALSE, encoding = "UTF-8")
+
+section_indices <- function(title) {
+  start <- grep(paste0("^## ", title, "\\s*$"), wf_lines)
+  if (length(start) == 0) return(integer(0))
+  # Next section or end of file
+  next_sections <- grep("^## ", wf_lines)
+  next_after <- next_sections[next_sections > start]
+  end <- if (length(next_after)) min(next_after) - 1 else length(wf_lines)
+  seq.int(start + 1, end)
+}
+
+count_items <- function(idx, prefix) {
+  if (length(idx) == 0) return(0L)
+  sum(grepl(paste0("^- \\*\\*", prefix, "[0-9]{3}\\*\\*:"), wf_lines[idx]))
+}
+
+counts <- data.frame(
   Category = c("Design", "Build", "Test", "Learn"),
-  Count = c(13, 15, 17, 10),
   Description = c(
     "Experimental design and planning workflows",
-    "DNA assembly and cell preparation workflows", 
+    "DNA assembly and cell preparation workflows",
     "Measurement and analysis workflows",
     "Data analysis and modeling workflows"
-  )
+  ),
+  stringsAsFactors = FALSE
 )
 
-kable(workflow_categories, caption = "Workflow Categories Overview")
+counts$Count <- c(
+  count_items(section_indices("Design"), "WD"),
+  count_items(section_indices("Build"), "WB"),
+  count_items(section_indices("Test"), "WT"),
+  count_items(section_indices("Learn"), "WL")
+)
+
+kable(counts[, c("Category", "Count", "Description")], caption = "Workflow Categories Overview")
 ```
 
 ## Search Workflows
