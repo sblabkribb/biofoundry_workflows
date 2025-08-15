@@ -1,22 +1,26 @@
 ```
-title: Biofoundry Unit-operations
-description: Collection of standardized Unit-operations
-version: 0.2
-language: English
-suggestions:
+Title: Biofoundry Unit-operations for software
+Description: Collection of standardized Unit-operations
+Version: 0.3
+Language: English
+Suggestions:
   - https://github.com/sblabkribb/biofoundry_workflows/issues
-date: 2025-02-22
-categories:
+Last updated: 2025-08-15
+Categories:
   - unit-operations
   - biofoundry
   - lab automation
   - software
-status: draft
 ```
 
 # Unit-operations
 
 ## Software
+
+
+- **USW005**: Biological Database
+  - **Software**: https://registry.igem.org/, Partbank, https://synbiohub.org/, https://bioparts.org/
+  - **Description**: Retrieving and utilizing standardized biological parts from curated databases for use in downstream applications. This operation enables users to search, filter, and select genetic elements such as promoters, coding DNA sequences (CDS), and terminators, ensuring compatibility and adherence to established design standards in assembly and characterization.
 
 - **USW010**: DNA Oligomer Pool Design
   - **Software**: Dsembler, DNAWorks
