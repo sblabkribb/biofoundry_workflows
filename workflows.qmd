@@ -8,7 +8,6 @@ library(knitr)
 library(DT)
 ```
 
-## Summary Statistics
 
 ```{r workflow-stats, echo=FALSE}
 # Compute workflow counts dynamically from included markdown
@@ -53,8 +52,9 @@ counts$Count <- c(
 kable(counts[, c("Category", "Count", "Description")], caption = "Workflow Categories Overview")
 ```
 
-## Search Workflows
 
-Use the search function in the navigation bar to quickly find specific workflows by ID or description. 
+------------------------------------------------------------------------
+
+
 
 {{< include workflows/workflows_en.md >}}
