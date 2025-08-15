@@ -1,7 +1,7 @@
 ```
 Title: Biofoundry Unit-operations for software
 Description: Collection of standardized Unit-operations
-Version: 0.3
+Version: 0.3.2
 Language: English
 Suggestions:
   - https://github.com/sblabkribb/biofoundry_workflows/issues
@@ -63,14 +63,14 @@ Categories:
   - **Description**: To search for enzymes from databases or to predict enzyme properties such as reactivities for selecting proper enzymes in pathways. This software aids in enzyme discovery and characterization for biocatalysis.
 
 - **USW110**: Sequence Alignment
-  - **Software**: BLAST, MUSCLE
+  - **Software**: BLAST, MUSCLE, Clustalw, Omega
   - **Description**: Exploring and comparing sequence similarity using alignment algorithms. These tools are essential for identifying homologous sequences and understanding evolutionary relationships.
 
 - **USW120**: Sequence Trimming and Filtering
   - **Software**: Trimmomatic, Cutadapt, Porechop, Filtlong
   - **Description**: Preprocessing for removing low-quality long/short-read sequences. This step is crucial for ensuring data quality in sequencing projects.
 
-- **USW130**: Sequence Mapping and Alignment
+- **USW130**: Read Mapping and Alignment
   - **Software**: BWA, Bowtie2, Minimap2, GraphMap
   - **Description**: Mapping long/short-read sequences to reference sequences. These tools are used for genome assembly, variant calling, and transcriptomics.
 
