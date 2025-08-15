@@ -1,7 +1,7 @@
 ```
 title: Biofoundry Workflows
 description: Collection of standardized workflows for biofoundry operations
-version: 0.3
+version: 0.4
 language: English
 suggestions:
   - https://github.com/sblabkribb/biofoundry_workflows/issues
@@ -58,11 +58,17 @@ status: draft
 
 ## Build
 
+- **WB005**: Nucleotide Quantification
+  - This workflow quantifies nucleic acids (DNA, RNA, and oligonucleotides) and assesses purity using UV absorbance (A260/A280, A260/A230) and fluorometric dye-based assays with spectrophotometers or microplate readers. It can support 96/384-well plate formats for high-throughput normalization and quality control prior to downstream steps such as assembly, PCR, sequencing, and cloning.
+
 - **WB010**: DNA Oligomer Assembly
   - This workflow focuses on assembling DNA oligomers into sequences that are several kilobases in length. The procedure typically begins with an oligomer pool and involves precise techniques to ensure accurate assembly of the desired DNA sequence.
 
 - **WB020**: DNA Library Construction
   - This workflow involves creating designed DNA mutant libraries, metagenomic libraries, or pathway libraries. It includes methods such as combinatorial and random mutagenesis to generate diverse DNA libraries for various applications.
+
+- **WB025**: Sequencing Library Preparation
+  - This workflow prepares DNA or cDNA/RNA libraries for next-generation sequencing (NGS). Typical steps include fragmentation (or amplicon input), end-repair/A-tailing, adapter ligation, and barcoding/indexing (native barcode multiplexing), followed by cleanup, size selection, quantification, and normalization/pooling. It supports 96/384-well automation and outputs sequencing-ready, quality-controlled libraries for downstream NGS runs.
 
 - **WB030**: DNA Assembly
   - This workflow is dedicated to assembling double-stranded DNA fragments into sequences that are several kilobases or larger. It includes the assembly of multiple DNA fragments, such as parts or operon-level sequences, in a specific order to achieve the desired genetic construct.
@@ -97,6 +103,9 @@ status: draft
 - **WB120**: Biology-mediated DNA Transfers
   - This workflow focuses on transforming designed vector plasmids into cells. It includes 96/384-well plate-based automated or semi-automated transformation procedures, as well as conjugation or other DNA transfer protocols (e.g., phage-mediated).
 
+- **WB125**: Colony Picking
+  - This workflow isolates single bacterial colonies from solid media after transformation or screening and transfers them to liquid media or fresh plates using automated colony pickers or manual pipetting. It supports 96/384-well array formats, barcode/sample tracking, and rule- or image-based selection (e.g., size, color, fluorescence). Outputs are clonal cultures suitable for downstream verification (e.g., genotyping, sequencing) and protein expression analysis.
+
 - **WB130**: Solid Media Cell Culture
   - This workflow involves culturing cells on solid media. It includes post-transformation growth, activity screening, or single-cell/colony isolation from solid medium, ensuring optimal growth conditions for the cultured cells.
 
@@ -109,7 +118,10 @@ status: draft
 ## Test
 
 - **WT010**: Nucleotide Sequencing
-  - This workflow involves preparing samples through native barcode multiplexing and library preparation, using next-generation sequencing (NGS) equipment to sequence the target DNA and produce fastq files. It includes transcriptomics analysis, such as RNA sequencing, to provide comprehensive insights into genetic material.
+  - This workflow runs next-generation sequencing (NGS) instruments to generate raw data (e.g., fastq files) from sequencing-ready libraries. It covers flow cell/chip loading, run setup, on-instrument QC/monitoring, and data offloading/demultiplexing. Transcriptome-scale assays (e.g., RNA-seq) are executed here once libraries have been prepared in the dedicated library preparation workflow.
+
+- **WT012**: Targeted mRNA Expression Measurement
+  - This workflow measures specific transcript levels from RNA samples using targeted assays such as RT-qPCR, qPCR, and digital PCR (ddPCR). It supports absolute (standard curve/copy number) and relative (ΔΔCt) quantification with appropriate reference genes, and enables high-throughput measurements in 96/384-well plates with automated liquid handling. Outputs include per-gene expression levels, fold-changes across conditions, and QC metrics such as amplification efficiency and melt-curve specificity, complementing NGS-based transcriptome profiling.
 
 - **WT015**: Nucleic Acid Size Verification
   - This workflow verifies the size and assesses the integrity of nucleic acid fragments (DNA or RNA) using electrophoretic separation techniques. Methods such as traditional agarose gel electrophoresis or capillary electrophoresis are employed to separate fragments based on size. Common applications include verifying PCR product sizes, confirming plasmid construction/linearization, checking restriction digest completeness, and assessing RNA quality. 
@@ -123,6 +135,12 @@ status: draft
 - **WT040**: Parallel Cell-free Protein/Enzyme Reaction
   - This workflow involves expressing and simultaneously measuring the activity of target proteins or enzymes in a cell-free reaction system under specific conditions. It allows for high-throughput screening and optimization of reaction conditions to enhance protein or enzyme performance.
 
+- **WT045**: Mammalian Cell Cytotoxicity Assay
+  - This workflow quantifies viability and cytotoxic effects in mammalian/eukaryotic cells induced by proteins, small molecules, or gene perturbations using colorimetric/fluorometric/luminescent assays (e.g., MTT/MTS/Resazurin, LDH release, ATP-based luminescence) and imaging-based markers (e.g., Annexin V/PI, caspase activity, live/dead staining). It supports endpoint or kinetic measurements in 96/384-well formats with appropriate positive/negative controls and normalization, reporting viability percentage, apoptosis/necrosis markers, and dose–response metrics such as IC50 with QC parameters (e.g., Z'-factor).
+
+- **WT046**: Microbial Viability and Cytotoxicity Assay
+  - This workflow measures growth inhibition and viability of microbial cells (e.g., bacteria, yeast) under treatment with compounds, proteins, or genetic perturbations. It includes OD600 growth curves/kinetics, broth microdilution for MIC/MBC determination, CFU enumeration, resazurin/ATP-based viability assays, membrane integrity dyes (e.g., PI/SYTOX), and time-kill/biofilm susceptibility when applicable. It supports 96/384-well high-throughput formats and automated liquid handling, reporting MIC/MBC, percent inhibition/viability, growth rate or area-under-the-curve, and dose–response parameters (e.g., IC50) with assay QC (e.g., Z'-factor).
+
 - **WT050**: Sample Pretreatment
   - This workflow covers the separation and preprocessing of metabolites from cultured media using centrifugation, cell lysis, and cell removal steps before purification and analysis. It is applicable in processes such as proteomics, lipidomics, metabolomics, and transcriptomics, ensuring samples are prepared for accurate downstream analysis.
 
@@ -134,6 +152,9 @@ status: draft
 
 - **WT080**: Image Analysis
   - This workflow is dedicated to analyzing cell growth, morphology, chromatin structure, organelle, and sub-cellular protein localization using high-throughput optical devices, such as microscopes. It includes sample preparation steps for imaging analysis, ensuring high-quality and reproducible results.
+
+- **WT085**: Mycoplasma Contamination Test
+  - This workflow screens mammalian cell cultures for mycoplasma contamination using rapid biochemical assays (e.g., ATP-based luminescence), targeted PCR/qPCR of mycoplasmal DNA, and culture-based confirmation when required. It supports routine high-throughput screening in 96/384-well formats with appropriate positive/negative controls, and reports qualitative/quantitative results with action thresholds for quarantine, decontamination, or discard prior to critical downstream experiments.
 
 - **WT090**: High-speed Cell Sorting
   - This workflow involves sorting cells based on target metabolite or cell activity using genetic circuits that convert the activity into a detectable signal. It enables the isolation of specific cell populations for further analysis or experimentation.
