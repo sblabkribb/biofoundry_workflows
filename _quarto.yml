@@ -24,7 +24,7 @@ website:
         file: resources.qmd
     right:
       - icon: github
-        href: https://github.com/sbteamkribb/biofoundry_workflows
+        href: https://github.com/sblabkribb/biofoundry_workflows
         aria-label: GitHub
 
   sidebar:

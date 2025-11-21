@@ -16,9 +16,9 @@ subtitle: "Additional documentation and references"
 - `resources/` - Additional documentation and reference materials
 
 ### Version Information
-- Current workflow version: 0.3
-- Current unit operations version: 0.3 (hardware), 0.2 (software)
-- Last updated: 2025-04-07
+- Current workflow version: 0.4.1
+- Current unit operations version: 0.4 (hardware), 0.3.2 (software)
+- Last updated: 2025-08-15
 
 ## Contact
 

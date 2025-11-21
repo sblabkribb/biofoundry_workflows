@@ -9,7 +9,7 @@ subtitle: "Abstraction hierarchy of workflows and unit operations for biofoundry
 
 - Conceptually subdividing and structuring the processes required in biofoundries enables standardized execution and management of processes, thereby improving biofoundry performance
 
-- We propose a 4-level abstraction hierarchy (Project, Service/Capability, Workflow, Unit Operation) to standardize biofoundries and streamline the DBTL cycle. This framework improves modularity, automation, and reproducibility while enabling better integration of AI tools, ultimately supporting a globally interoperable biofoundry network for collaborative synthetic biology. See [Biofoundry Workflow Abstraction Hierarchy](resources\Biofoundry_workflow_Abstraction_hierarchy_manuscript_v250605.pdf) and its [Supplement Information](resources\Biofoundry_workflow_Abstraction_hierarchy_suppl_v250605.pdf)
+- We propose a 4-level abstraction hierarchy (Project, Service/Capability, Workflow, Unit Operation) to standardize biofoundries and streamline the DBTL cycle. This framework improves modularity, automation, and reproducibility while enabling better integration of AI tools, ultimately supporting a globally interoperable biofoundry network for collaborative synthetic biology. See [Biofoundry Workflow Abstraction Hierarchy](resources/Biofoundry_workflow_Abstraction_hierarchy_manuscript_v250605.pdf) and its [Supplement Information](resources/Biofoundry_workflow_Abstraction_hierarchy_suppl_v250605.pdf)
 
 
 
