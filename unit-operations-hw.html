@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.542">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Biofoundry Workflows - Hardware Unit Operations</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Biofoundry Workflows</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./workflows.html"> 
+<span class="menu-text">Workflows</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-unit-operations" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Unit Operations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-unit-operations">    
+        <li>
+    <a class="dropdown-item" href="./unit-operations-hw.html">
+ <span class="dropdown-text">Hardware</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./unit-operations-sw.html">
+ <span class="dropdown-text">Software</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sblabkribb/biofoundry_workflows"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Hardware Unit Operations</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#unit-operations" id="toc-unit-operations" class="nav-link active" data-scroll-target="#unit-operations"><span class="header-section-number">1</span> Unit-operations</a>
+  <ul class="collapse">
+  <li><a href="#hardware" id="toc-hardware" class="nav-link" data-scroll-target="#hardware"><span class="header-section-number">1.1</span> Hardware</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hardware Unit Operations</h1>
+<p class="subtitle lead">Equipment-based unit operations for biofoundry automation</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Hardware Unit Operation Statistics</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Total Hardware Unit-operations</td>
+<td style="text-align: right;">45</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<pre><code>Title: Biofoundry Unit-operations for hardware:
+Description: Collection of standardized Unit-operations
+Version: 0.4
+Language: English
+Suggestions:
+  - https://github.com/sblabkribb/biofoundry_workflows/issues
+Last updated: 2025-08-15
+Categories:
+  - unit-operations
+  - biofoundry
+  - lab automation
+  - hardware</code></pre>
+<section id="unit-operations" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Unit-operations</h1>
+<section id="hardware" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="hardware"><span class="header-section-number">1.1</span> Hardware</h2>
+<ul>
+<li><strong>UHW010</strong>: Liquid Handling
+<ul>
+<li><strong>Equipment</strong>: Multiple dispenser system</li>
+<li><strong>Description</strong>: This unit operation involves basic and fundamental liquid sample operations in laboratory processes, such as reagent preparation, sample distribution, dilution, mixing, and washing. It ensures precision and efficiency in handling liquid samples across various experimental setups.</li>
+</ul></li>
+<li><strong>UHW015</strong>: Bulk Liquid Dispenser
+<ul>
+<li><strong>Equipment</strong>: Bulk Reagent Dispenser / Automated Plate Filler</li>
+<li><strong>Description</strong>: Rapid and accurate dispensing of larger volumes of a single liquid reagent such as growth media and buffers into multi-well plates. Optimized for speed and efficiency in plate preparation tasks.</li>
+</ul></li>
+<li><strong>UHW020</strong>: 96 Channel Liquid Handling
+<ul>
+<li><strong>Equipment</strong>: NGS library preparation system</li>
+<li><strong>Description</strong>: This unit operation enables high-throughput, simultaneous dispensing or transferring of liquids across a 96-well platform. It is commonly used for NGS library preparation and includes magnetic bead-based purification, enhancing throughput and consistency in sample processing.</li>
+</ul></li>
+<li><strong>UHW030</strong>: Nanoliter Liquid Dispensing
+<ul>
+<li><strong>Equipment</strong>: Acoustic liquid dispenser</li>
+<li><strong>Description</strong>: Specialized for high-precision dispensing of extremely small liquid volumes, typically in the nanoliter range. This unit operation reduces reagent usage, minimizes waste, and allows for scalable, cost-effective workflows, particularly in high-throughput screening applications.</li>
+</ul></li>
+<li><strong>UHW040</strong>: Desktop Liquid Handling
+<ul>
+<li><strong>Equipment</strong>: Desktop liquid handling system</li>
+<li><strong>Description</strong>: A compact liquid handling system designed for small-scale automated experiments or educational use. It provides flexibility and ease of use for routine laboratory tasks, making it ideal for teaching labs or small research groups.</li>
+</ul></li>
+<li><strong>UHW050</strong>: Single Cell Sequencing Preparation
+<ul>
+<li><strong>Equipment</strong>: Droplet-based high-throughput single-cell platforms</li>
+<li><strong>Description</strong>: This unit operation prepares single cells for single-cell analysis, including processes such as encapsulating single cells with reagents for simultaneous isolation and library preparation. It is crucial for single-cell genomics and transcriptomics studies.</li>
+</ul></li>
+<li><strong>UHW060</strong>: Colony Picking
+<ul>
+<li><strong>Equipment</strong>: Colony picker</li>
+<li><strong>Description</strong>: The process of isolating individual bacterial or yeast colonies from an agar plate and transferring them to a liquid culture or multi-well plate for downstream applications. This unit operation is essential for microbial strain selection and screening.</li>
+</ul></li>
+<li><strong>UHW070</strong>: Cell Sorting
+<ul>
+<li><strong>Equipment</strong>: High-speed flow cytometry</li>
+<li><strong>Description</strong>: A process to select and categorize cells based on their biological properties, such as size, shape, fluorescence, or other markers. It is used for single-cell analysis, enrichment, or functional studies, providing high precision and throughput.</li>
+</ul></li>
+<li><strong>UHW080</strong>: Cell Lysis
+<ul>
+<li><strong>Equipment</strong>: Bead mill or ultrasonic homogenizers</li>
+<li><strong>Description</strong>: The process of breaking open cells to release their internal components, such as DNA, RNA, proteins, or metabolites, for downstream processing. This unit operation is critical for sample preparation in molecular biology and biochemistry.</li>
+</ul></li>
+<li><strong>UHW090</strong>: Electroporation
+<ul>
+<li><strong>Equipment</strong>: Electroporator</li>
+<li><strong>Description</strong>: A technique for introducing foreign molecules, such as DNA and RNA, into cells by applying an electrical field. It is widely used in genetic engineering and cell transformation studies.</li>
+</ul></li>
+<li><strong>UHW100</strong>: Thermocycling
+<ul>
+<li><strong>Equipment</strong>: Thermal Cycler</li>
+<li><strong>Description</strong>: The process of repeatedly heating and cooling through defined temperature cycles to facilitate reactions. It is used in workflows such as DNA assembly and DNA/RNA amplification, including PCR.</li>
+</ul></li>
+<li><strong>UHW110</strong>: Real-time PCR
+<ul>
+<li><strong>Equipment</strong>: qPCR</li>
+<li><strong>Description</strong>: Amplifying and simultaneously quantifying a specific DNA or RNA sequence. This unit operation is essential for gene expression analysis and diagnostic applications.</li>
+</ul></li>
+<li><strong>UHW120</strong>: Plate Handling
+<ul>
+<li><strong>Equipment</strong>: Plate handling robot arm</li>
+<li><strong>Description</strong>: Connecting workflows/unit operations among automated equipment through plate transportation. It enhances workflow efficiency and integration in high-throughput laboratory environments.</li>
+</ul></li>
+<li><strong>UHW130</strong>: Sealing
+<ul>
+<li><strong>Equipment</strong>: Microplate sealer</li>
+<li><strong>Description</strong>: Plate sealing for PCR, culturing, storing, and other applications. It ensures sample integrity and prevents contamination during storage and processing.</li>
+</ul></li>
+<li><strong>UHW140</strong>: Peeling
+<ul>
+<li><strong>Equipment</strong>: Microplate peeler</li>
+<li><strong>Description</strong>: Plate cover removal after PCR, culturing, storing, and other applications. It facilitates easy access to samples while maintaining workflow efficiency.</li>
+</ul></li>
+<li><strong>UHW150</strong>: Capping Decapping
+<ul>
+<li><strong>Equipment</strong>: Tube capper and decapper</li>
+<li><strong>Description</strong>: Opening and closing of sample tube caps from storage. This unit operation streamlines sample handling and reduces manual labor in high-throughput settings.</li>
+</ul></li>
+<li><strong>UHW160</strong>: Sample Storage
+<ul>
+<li><strong>Equipment</strong>: Sample storage system</li>
+<li><strong>Description</strong>: Storing DNA or cell samples, with automated sample retrieval and storage system. It ensures sample security and accessibility in large-scale experiments.</li>
+</ul></li>
+<li><strong>UHW170</strong>: Plate Storage
+<ul>
+<li><strong>Equipment</strong>: Plate hotel</li>
+<li><strong>Description</strong>: Storing or retrieving plates with an automated system for high-throughput experiments. It improves workflow throughput with integration of automated robotic arms.</li>
+</ul></li>
+<li><strong>UHW180</strong>: Incubation
+<ul>
+<li><strong>Equipment</strong>: Incubator</li>
+<li><strong>Description</strong>: Maintaining specific conditions for cells or chemical reactions to promote growth or desired reactions. It is essential for cell culture and biochemical assays.</li>
+</ul></li>
+<li><strong>UHW190</strong>: HT Aerobic Fermentation
+<ul>
+<li><strong>Equipment</strong>: High throughput microbial fermentation system</li>
+<li><strong>Description</strong>: Process of cultivating microbial or cell cultures under oxygen-rich conditions in a parallelized, automated system. It is generally designed for small-scale (10–250mL) fermentations, optimizing conditions for microbial growth and product formation.</li>
+</ul></li>
+<li><strong>UHW200</strong>: HT Anaerobic Fermentation
+<ul>
+<li><strong>Equipment</strong>: High throughput anaerobic fermentation system</li>
+<li><strong>Description</strong>: Process of cultivating microbial or cell cultures under oxygen-free conditions in a parallelized, automated system. It is generally designed for small-scale (10–250mL) fermentations, supporting studies on anaerobic metabolism and product synthesis.</li>
+</ul></li>
+<li><strong>UHW210</strong>: Microbioreactor Fermentation
+<ul>
+<li><strong>Equipment</strong>: Microbioreactor fermentation system</li>
+<li><strong>Description</strong>: Cultivation of microbial or cell cultures in micro-scale bioreactors (&lt;10 mL) equipped with advanced monitoring and control capabilities. It is mainly used for high-throughput screening of strains, media, and process parameters.</li>
+</ul></li>
+<li><strong>UHW220</strong>: Bioreactor Fermentation
+<ul>
+<li><strong>Equipment</strong>: Bioreactor fermentation system</li>
+<li><strong>Description</strong>: Process of cultivating microbial or cell cultures in bioreactors (liter scale). Bioreactors can operate in batch, fed-batch, or continuous modes and are commonly used in both research and industrial settings.</li>
+</ul></li>
+<li><strong>UHW230</strong>: Nucleic Acid Fragment Analysis
+<ul>
+<li><strong>Equipment</strong>: Nucleic acid fragment analyzer</li>
+<li><strong>Description</strong>: To separate, identify, and characterize fragments of nucleic acids based on their size. This unit operation is crucial for genetic analysis and quality control.</li>
+</ul></li>
+<li><strong>UHW240</strong>: Protein Fragment Analysis
+<ul>
+<li><strong>Equipment</strong>: Protein fragment analyzer</li>
+<li><strong>Description</strong>: To separate, identify, and characterize fragments of proteins for the study of structure, size, modifications, interactions, or expressions. It supports proteomics research and protein engineering.</li>
+</ul></li>
+<li><strong>UHW250</strong>: Nucleic Acid Purification
+<ul>
+<li><strong>Equipment</strong>: Nucleic acid purification system</li>
+<li><strong>Description</strong>: The process of purifying DNA or RNA from biological samples using an automated device. It ensures high purity and yield for downstream applications.</li>
+</ul></li>
+<li><strong>UHW255</strong>: Centrifuge
+<ul>
+<li><strong>Equipment</strong>: Centrifuge</li>
+<li><strong>Description</strong>: Separating components of different densities within a liquid sample by applying centrifugal force. Used for pelleting cells, clarifying solutions, separating precipitates, and sample preparation steps in various workflows.</li>
+</ul></li>
+<li><strong>UHW260</strong>: Short-read Sequence Analysis
+<ul>
+<li><strong>Equipment</strong>: Short read sequence analyzer</li>
+<li><strong>Description</strong>: Short-read-based sequencing using NGS technologies. It is essential for high-throughput genomic studies and variant detection.</li>
+</ul></li>
+<li><strong>UHW265</strong>: Sanger Sequencing
+<ul>
+<li><strong>Equipment</strong>: Capillary electrophoresis DNA sequencer</li>
+<li><strong>Description</strong>: Classical chain-termination sequencing for targeted amplicons and plasmids. Used for sequence verification and small-scale sequencing, producing chromatograms (ABI) and base calls. Supports 96-well plate automation for moderate throughput.</li>
+</ul></li>
+<li><strong>UHW270</strong>: Long-read Sequence Analysis
+<ul>
+<li><strong>Equipment</strong>: Long read sequence analyzer</li>
+<li><strong>Description</strong>: Long-read-based sequencing using platforms such as Nanopore or PacBio. It provides comprehensive insights into complex genomic regions and structural variations.</li>
+</ul></li>
+<li><strong>UHW280</strong>: Sequence Quality Control
+<ul>
+<li><strong>Equipment</strong>: Sequence quality control system</li>
+<li><strong>Description</strong>: Evaluating single-cell quality for single-cell analysis. It ensures data accuracy and reliability in single-cell genomics.</li>
+</ul></li>
+<li><strong>UHW290</strong>: LC-MS-MS
+<ul>
+<li><strong>Equipment</strong>: LC-MS/MS</li>
+<li><strong>Description</strong>: High-performance liquid chromatography coupled with tandem mass spectrometry. Provides highly sensitive and selective quantification and structural information by separating components with LC and analyzing specific ions through two stages of mass analysis. Ideal for targeted analysis in complex matrices like biological fluids (e.g., quantifying drug metabolites, analyzing specific peptides).</li>
+</ul></li>
+<li><strong>UHW300</strong>: LC-MS
+<ul>
+<li><strong>Equipment</strong>: LC-MS</li>
+<li><strong>Description</strong>: Liquid chromatography coupled with mass spectrometry. Separates components using LC and identifies them based on their mass-to-charge ratio. Offers better identification than LC alone but less structural info and selectivity than LC-MS/MS. Used for general profiling (e.g., metabolic profiling, identifying major components in natural extracts).</li>
+</ul></li>
+<li><strong>UHW310</strong>: HPLC
+<ul>
+<li><strong>Equipment</strong>: HPLC</li>
+<li><strong>Description</strong>: High-performance liquid chromatography. It separates, identifies, and quantifies components in a liquid mixture using high pressure and a detector such as UV-Vis. Common for routine analysis, purity checks, and QC (e.g., analyzing active pharmaceutical ingredient purity, quantifying vitamins in supplements).</li>
+</ul></li>
+<li><strong>UHW320</strong>: UPLC
+<ul>
+<li><strong>Equipment</strong>: UPLC</li>
+<li><strong>Description</strong>: Ultra-high-performance liquid chromatography. Similar to HPLC but uses smaller particle columns and higher pressures for significantly faster analysis times and higher resolution. Advantageous for high-throughput screening or separating complex mixtures that are difficult for HPLC.</li>
+</ul></li>
+<li><strong>UHW330</strong>: GC
+<ul>
+<li><strong>Equipment</strong>: GC</li>
+<li><strong>Description</strong>: Gas chromatography. It separates volatile or semi-volatile compounds in their gaseous phase based on their interaction with a stationary phase. Typically uses detectors like FID or TCD. Used for analyzing volatile organic compounds, solvent purity, and flavor/fragrance profiling (e.g., analyzing aroma compounds, measuring ethanol content).</li>
+</ul></li>
+<li><strong>UHW340</strong>: GC-MS
+<ul>
+<li><strong>Equipment</strong>: GC-MS</li>
+<li><strong>Description</strong>: Gas chromatography coupled with mass spectrometry. It separates volatile components using GC and identifies them based on their mass spectra, often matched against libraries. It provides much better identification capabilities than GC alone. It is widely used in environmental analysis, forensics, and food safety.</li>
+</ul></li>
+<li><strong>UHW350</strong>: GC-MS-MS
+<ul>
+<li><strong>Equipment</strong>: GC-MS/MS</li>
+<li><strong>Description</strong>: Gas chromatography coupled with tandem mass spectrometry. Offers enhanced sensitivity and selectivity compared to GC-MS by using two stages of mass analysis after GC separation. Ideal for trace analysis in complex matrices.</li>
+</ul></li>
+<li><strong>UHW355</strong>: SPE-MS-MS
+<ul>
+<li><strong>Equipment</strong>: SPE-MS/MS</li>
+<li><strong>Description</strong>: Solid-Phase Extraction (SPE) system coupled with Tandem Mass Spectrometer. Combines automated SPE for sample cleanup, concentration, and matrix removal with Tandem Mass Spectrometry for highly sensitive and selective quantification. It often used for rapid screening or targeted quantification where extensive chromatography is not needed (e.g., quantifying specific pesticide residues in food extracts after SPE cleanup).</li>
+</ul></li>
+<li><strong>UHW360</strong>: FPLC
+<ul>
+<li><strong>Equipment</strong>: FPLC</li>
+<li><strong>Description</strong>: Fast protein liquid chromatography. A type of liquid chromatography optimized for the purification of biomolecules like proteins and nucleic acids, typically using lower pressures and biocompatible materials compared to HPLC. Used for preparative scale separation.</li>
+</ul></li>
+<li><strong>UHW365</strong>: Rapid Sugar Analyzer
+<ul>
+<li><strong>Equipment</strong>: Biochemical Analyzer</li>
+<li><strong>Description</strong>: Rapid quantification of specific simple sugars (e.g., glucose, sucrose, lactate) in liquid samples, typically using enzyme-based electrochemical or optical sensors. Provides faster results than chromatography for targeted analytes, commonly used in cell culture and fermentation monitoring.</li>
+</ul></li>
+<li><strong>UHW370</strong>: Oligomer Synthesis
+<ul>
+<li><strong>Equipment</strong>: Oligomer synthesizer</li>
+<li><strong>Description</strong>: Parallel synthesis of oligomers using chemical methods for CT enzyme-based synthesis. It supports the production of custom DNA or RNA sequences for research and industrial applications.</li>
+</ul></li>
+<li><strong>UHW380</strong>: Microplate Reading
+<ul>
+<li><strong>Equipment</strong>: Multi-functional microplate reader</li>
+<li><strong>Description</strong>: Quantifying protein/cell activity by measuring fluorescence, OD, etc., on 96 or 384-well plates. It is essential for high-throughput screening and assay development.</li>
+</ul></li>
+<li><strong>UHW390</strong>: Microscopy Imaging
+<ul>
+<li><strong>Equipment</strong>: Microscopy</li>
+<li><strong>Description</strong>: Imaging of biological samples, such as animal cells. It provides detailed visualization for cell biology and histology studies.</li>
+</ul></li>
+<li><strong>UHW400</strong>: Manual
+<ul>
+<li><strong>Equipment</strong>: Manual operations</li>
+<li><strong>Description</strong>: Any general process of experiment including preparation of reagents, labware, and manual operations. It encompasses traditional laboratory techniques and procedures.</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
