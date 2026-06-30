@@ -102,7 +102,7 @@ Categories:
 - **WB120**: Biology-mediated DNA Transfers
   - This workflow focuses on transforming designed vector plasmids into cells. It includes 96/384-well plate-based automated or semi-automated transformation procedures, as well as conjugation or other DNA transfer protocols (e.g., phage-mediated).
 
-- **WB125**: Colony Picking
+- **WB125**: Colony Selection
   - This workflow isolates single bacterial colonies from solid media after transformation or screening and transfers them to liquid media or fresh plates using automated colony pickers or manual pipetting. It supports 96/384-well array formats, barcode/sample tracking, and rule- or image-based selection (e.g., size, color, fluorescence). Outputs are clonal cultures suitable for downstream verification (e.g., genotyping, sequencing) and protein expression analysis.
 
 - **WB130**: Solid Media Cell Culture
