@@ -114,6 +114,12 @@ Categories:
 - **WB150**: PCR-based Target Amplification
   - This workflow utilizes designed primers and Polymerase Chain Reaction (PCR) to specifically amplify a target gene sequence from complex templates such as genomic DNA or metagenomic samples, enabling gene screening and retrieval.
 
+- **WB155**: RCA-based Target Amplification
+  - This workflow employs designed or random primers in combination with rolling circle amplification (RCA), an isothermal amplification method, to selectively amplify target gene sequences from complex templates such as genomic or metagenomic DNA, enabling efficient gene screening and retrieval.
+
+- **WB160**: CRISPR-based Genome Editing
+  - This workflow introduces targeted genetic modifications using CRISPR-based genome engineering systems, including base editing (BE) for precise nucleotide substitutions and CRISPR-associated transposase (CAST) systems for programmable DNA insertion. It enables the construction of edited strains, targeted variant libraries, or genome-integrated genetic elements for downstream screening and characterization.
+
 ## Test
 
 - **WT010**: Nucleotide Sequencing
